@@ -1,36 +1,39 @@
-const {question,exit}= require("./lib/readquire/readLine")
+const { question, exit } = require("./lib/readquire/readLine");
+const { pilihMenu } = require("./lib/pilihMenu");
+const { tampilkanKeranjang } = require("./lib/keranjang");
+const { tampilkanHistory } = require("./lib/history");
 
 async function menuUtama() {
-  console.log("\n=== Selamat datang di Emado's ===");
-  console.log("1. Lihat Menu");
-  console.log("2. Lihat Keranjang");
-  console.log("3. Lihat History");
-  console.log("4. Keluar");
+  let running = true;
 
-  const inputMenu = parseInt(
-    await question('masukan angka untuk memilih menu:')
-  )
-  switch (inputMenu) {
+  while (running) {
+    console.log("\n=== Selamat datang di Emado's ===");
+    console.log("1. Lihat Menu");
+    console.log("2. Lihat Keranjang");
+    console.log("3. Lihat History");
+    console.log("4. Keluar");
+
+    const inputMenu = parseInt(await question("Masukan angka untuk memilih menu: "));
+
+    switch (inputMenu) {
       case 1:
-        console.log('fitur belum dibuat')
-        exit()
+        await pilihMenu();
         break;
       case 2:
-        console.log('fitur belum dibuat')
-        exit()
+        await tampilkanKeranjang();
         break;
       case 3:
-        console.log('fitur belum dibuat')
-        exit()
+        await tampilkanHistory();
         break;
       case 4:
-        console.log('fitur belum dibuat')
-        exit
+        console.log("Terima kasih, sampai jumpa kembali!");
+        exit();
+        running = false;
         break;
       default:
         console.log("Input tidak valid!");
-        menuUtama();
     }
+  }
 }
 
-menuUtama()
+menuUtama();

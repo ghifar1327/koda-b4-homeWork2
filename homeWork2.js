@@ -18,7 +18,6 @@ const daftarMenu = [
   { menu: "Garlic mayo small", harga: 6000 },
 ];
 
-// ===== Variabel Keranjang & History =====
 let keranjang = [];
 let history = [];
 
@@ -76,7 +75,7 @@ function tampilkanMenu() {
               break;
             default:
               console.log("*Input tidak sesuai*");
-              tampilkanMenu(); // ulang tampilkan menu
+              tampilkanMenu();
           }
         });
       });
