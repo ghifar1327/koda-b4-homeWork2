@@ -17,21 +17,26 @@ async function menuUtama() {
 
     switch (inputMenu) {
       case 1:
+        console.clear()
         await pilihMenu();
         break;
       case 2:
+        console.clear()
         await tampilkanKeranjang();
         break;
       case 3:
+        console.clear()
         await tampilkanHistory();
         break;
       case 4:
-        console.log("Terima kasih, sampai jumpa kembali!");
+        console.clear()
+        console.log("\n\nTerima kasih, sampai jumpa kembali..😊\n\n");
         exit();
         running = false;
         break;
       default:
         console.log("Input tidak valid!");
+        console.clear()
     }
   }
 }
